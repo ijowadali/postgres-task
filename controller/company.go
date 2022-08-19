@@ -7,7 +7,7 @@ import (
 )
 
 func GetCompany(ctx *gin.Context) {
-	company := []models.Company{}
+	var company []models.Company
 	config.DB.Find(&company)
 	ctx.JSON(200, &company)
 }

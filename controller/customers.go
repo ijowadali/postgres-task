@@ -7,7 +7,7 @@ import (
 )
 
 func GetCustomers(ctx *gin.Context) {
-	customers := []models.Customers{}
+	var customers []models.Customers
 	config.DB.Find(&customers)
 	ctx.JSON(200, &customers)
 }

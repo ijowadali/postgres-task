@@ -7,7 +7,7 @@ import (
 )
 
 func GetItem(ctx *gin.Context) {
-	item := []models.Item{}
+	var item []models.Item
 	config.DB.Find(&item)
 	ctx.JSON(200, &item)
 }

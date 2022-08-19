@@ -7,7 +7,7 @@ import (
 )
 
 func GetDeliveries(ctx *gin.Context) {
-	deliveries := []models.Deliveries{}
+	var deliveries []models.Deliveries
 	config.DB.Find(&deliveries)
 	ctx.JSON(200, &deliveries)
 }
